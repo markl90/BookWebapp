@@ -7,6 +7,7 @@
     	var vm = this;
 
         vm.isHidden = false;
+        vm.showUpdate = false;
 
         vm.hideTable = function()
         {

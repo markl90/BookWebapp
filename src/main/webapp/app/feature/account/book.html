@@ -30,7 +30,8 @@
 							</td>
 							<td>
 								<button class="btn" ng-click="bookCtrl.delete(book)">Delete</button>
-								<button class="btn" ng-click="bookCtrl.updateBook(book.id)">Update</button>
+								<button class="btn" ng-click="bookCtrl.showUpdate=!bookCtrl.showUpdate">Update</button>
+								<button class="btn" ng-click="bookCtrl.updateBook(book.id);bookCtrl.showUpdate=!bookCtrl.showUpdate" ng-show="bookCtrl.showUpdate" >Confirm</button>
 
 							</td>
         		</tr>
@@ -53,12 +54,12 @@
 						</tr>
 
 <tr>
-<th>
+<th ng-show="bookCtrl.showUpdate">
 
 	{{'Update' | uppercase}}
 	</th>
 </tr>
-						<tr>
+						<tr ng-show="bookCtrl.showUpdate">
 
 								<td>
 										<input ng-model="bookCtrl.update.title">
@@ -69,6 +70,7 @@
 								<td>
 										<input  ng-model="bookCtrl.update.yearPublished">
 								</td>
+
 								<td>
 
 
