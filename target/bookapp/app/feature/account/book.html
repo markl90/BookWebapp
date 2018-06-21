@@ -5,12 +5,22 @@
    		<div ng-hide="bookCtrl.isHidden">
         	<h3><span>books table</span></h3>
         	<table class="table">
+						<tr>
+
+								<th>{{'Search Books' | uppercase}}</th>
+
+						</tr>
+						<tr>
+							<td>
+								<input id="searchBox" ng-model="search">
+							</td>
+						</tr>
         		<tr>
         			<th>{{'title' | uppercase}}</th>
         			<th>{{'genre' | uppercase}}</th>
         			<th>{{'Year Published' | uppercase}}</th>
         		</tr>
-        		<tr ng-repeat="book in bookCtrl.books">
+        		<tr ng-repeat="book in bookCtrl.books | filter:search">
         			<td>{{book.title}}</td>
         			<td>{{book.genre}}</td>
         			<td>{{book.yearPublished}}</td>
@@ -18,18 +28,20 @@
 								<button class="btn" ng-click="bookCtrl.delete(book)">Delete</button>
 							</td>
         		</tr>
+						
+						</tr>
 						<tr>
 							<td>
-								  <input value="temp" ng-model="bookCtrl.tempData.title">
+								  <input ng-model="bookCtrl.tempData.title">
 							</td>
 							<td>
-								  <input value="temp" ng-model="bookCtrl.tempData.genre">
+								  <input  ng-model="bookCtrl.tempData.genre">
 							</td>
 							<td>
-								  <input value="temp" ng-model="bookCtrl.tempData.yearPublished">
+								  <input  ng-model="bookCtrl.tempData.yearPublished">
 							</td>
 							<td>
-								<button class="btn" ng-click="bookCtrl.addBook()">Add</button>
+								<button class="btn" ng-click="bookCtrl.addBook()">Addddd</button>
 
 							</td>
 						</tr>

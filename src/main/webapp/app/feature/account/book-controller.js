@@ -27,16 +27,21 @@
        vm.delete = function(book){
          bookService.deletebook(book);
          console.log("delete called in controller");
+         location.reload();
        }
 
        vm.addBook = function(book){
          bookService.savebook(vm.tempData);
          console.log("save book called in controller");
+         location.reload();
+
        }
+
+       
 
        vm.tempData =  {'title': 'newbook', 'genre': 'fiction', 'yearPublished': '1990'};
 
-       vm.jsonString = JSON.stringify(vm.tempData);
+
 
        init();
 
