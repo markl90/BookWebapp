@@ -67,6 +67,17 @@ public class BookDBRepository implements BookRepository {
 		return "{\"message\": \"Book not found\"}";
 	}
 	
+	@Transactional(REQUIRED)
+	public String updateBook(String bookToUpdate) {
+		Book updatedBook = util.getObjectForJSON(bookToUpdate, Book.class); 
+		Book bookFromDB = findBK(updatedBook.getId());
+		if (updatedBook != null) {
+			bookFromDB = updatedBook;
+			manager.merge(bookFromDB);
+		}
+		return "{\"message\": \"book sucessfully updated\"}";
+	}
+	
 	private Book findBK(Long id) {
 		LOGGER.info("BookDBRepository findBK");
 		return manager.find(Book.class, id);

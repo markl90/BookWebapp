@@ -37,11 +37,16 @@
 
        }
 
-       
+       vm.updateBook = function(id){
+         vm.update.id = id;
+         bookService.updatebook(vm.update);
+         console.log("updatebook called in controller");
+         location.reload();
+       }
 
        vm.tempData =  {'title': 'newbook', 'genre': 'fiction', 'yearPublished': '1990'};
 
-
+       vm.update = {'id': 1, 'title': '', 'genre': '', 'yearPublished': ''};
 
        init();
 

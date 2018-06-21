@@ -10,5 +10,7 @@ public interface BookRepository {
 	public String createBook(String book);
 	
 	public String deleteBook(Long id);
+	
+	public String updateBook(String bookToUpdate);
 
 }

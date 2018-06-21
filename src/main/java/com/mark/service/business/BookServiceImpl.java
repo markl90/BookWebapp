@@ -36,5 +36,10 @@ public class BookServiceImpl implements BookService{
 		return repo.deleteBook(id);
 
 	}
+	
+	public String updateBook(String bookToUpdate) {
+		LOGGER.info("In BookServiceImpl updateBook ");
+		return repo.updateBook(bookToUpdate);
+	}
 
 }

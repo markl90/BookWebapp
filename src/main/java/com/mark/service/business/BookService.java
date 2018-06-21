@@ -9,6 +9,8 @@ public interface BookService {
 	public String createBook(String book);
 	
 	public String deleteBook(Long id);
+	
+	public String updateBook(String bookToUpdate);
 
 
 }

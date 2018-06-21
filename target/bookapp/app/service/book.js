@@ -21,6 +21,13 @@
           return bookDal.savebook(book);
         };
 
+        this.updatebook = function(book)
+        {
+           console.log("updatebook called in service");
+          return bookDal.updatebook(book);
+        };
+
+
 
     }
 
